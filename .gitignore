@@ -34,8 +34,5 @@ nosetests.xml
 .project
 .pydevproject
 
-# Built code
-build-*/
-
 # Vim swp files
 *.sw?

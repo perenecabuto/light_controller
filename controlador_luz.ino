@@ -14,29 +14,27 @@ void setup() {
 void loop() {
     while (Serial.available()) {
         char msg = Serial.read();
-        Serial.write((int) msg + "\n");
-        Serial.write("Teste");
 
-        if (msg == 'A') {
-            Serial.write("A!!!");
-            mySwitch.send(9221160, 24);
-        }
-        else if (msg == 'B') {
-            Serial.write("B!!!");
-            mySwitch.send(9221156, 24);
-        }
-        else if (msg == 'C') {
-            Serial.write("C!!!");
-            mySwitch.send(9221153, 24);
-        }
-        else if (msg == 'D') {
-            Serial.write("D!!!");
-            mySwitch.send(9221154, 24);
-        }
-        else {
-            mySwitch.send(9221151, 24);
+        switch(msg) {
+            case 'A':
+                Serial.write("A!!!");
+                mySwitch.send(9221160, 24);
+                break;
+
+            case 'B':
+                Serial.write("B!!!");
+                mySwitch.send(9221156, 24);
+                break;
+
+            case 'C':
+                Serial.write("C!!!");
+                mySwitch.send(9221153, 24);
+                break;
+
+            case 'D':
+                Serial.write("D!!!");
+                mySwitch.send(9221154, 24);
+                break;
         }
     }
-
-
 }
